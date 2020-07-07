@@ -242,7 +242,9 @@ func (c *Client) sendAppsRequest(request string, path string, data string) (*Sha
 
 	return &result, nil
 }
-
+func (c *Client) SendRAWOCSRequest(request string, path string, data string) (*ShareResult, error) {
+	return c.sendOCSRequest(request, path, data)
+}
 func (c *Client) sendOCSRequest(request string, path string, data string) (*ShareResult, error) {
 	// Create the https request
 
